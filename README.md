@@ -1,6 +1,8 @@
 # python-dotnet-binaryformat
 Pure Python parser for data encoded by .NET's BinaryFormatter
 
+Structures implemented using the documentation available from Microsoft [here](https://winprotocoldoc.blob.core.windows.net/productionwindowsarchives/MS-NRBF/%5bMS-NRBF%5d.pdf). Not all of these structures are implemented - just what I've seen in real-life so far. Please open issues against this repo if you encounter `NotImplementedError` and can provide a sample buffer.
+
 
 ## scripts
 
@@ -27,6 +29,7 @@ Parse the serialized data and show its structure in a tree-like format.
 Example::
 
 ```
+λ python scripts/show_structure.py tests/data/dntojscript.bin -v
 00000000 (6418) SerializedData: SerializedData
 00000000 (17)   0: SerializationHeaderRecord
 00000000 (01)     RecordTypeEnum: SerializedStreamHeader (0x00000000)
